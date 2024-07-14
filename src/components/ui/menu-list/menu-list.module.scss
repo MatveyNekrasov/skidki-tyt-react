@@ -1,0 +1,19 @@
+.menuList {
+	display: flex;
+	align-items: center;
+	gap: 32px;
+	font-weight: 700;
+}
+
+.menuItem {
+	cursor: pointer;
+}
+
+.menuItem:hover {
+	color: var(--accent-color);
+	transition: color 0.3s ease;
+}
+
+.menuIcon {
+	margin-inline-start: 2px;
+}

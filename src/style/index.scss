@@ -1,0 +1,33 @@
+/* Подключаем стили со шрифтами, так как они нужны на всех страницах */
+
+@import url('./fonts/fonts.scss');
+
+/* Отключаем браузерные дефолтные стили для элементов */
+
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li {
+	margin: 0;
+	padding: 0;
+}
+
+ul {
+	list-style: none;
+}

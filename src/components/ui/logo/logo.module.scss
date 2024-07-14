@@ -1,0 +1,30 @@
+.logo {
+	padding-inline-start: 40px;
+	text-decoration: none;
+}
+
+.logoImg {
+	object-fit: cover;
+	object-position: center;
+	inline-size: 50px;
+	aspect-ratio: 1 / 1;
+}
+
+.link {
+	text-decoration: none;
+}
+
+.link:visited {
+	color: inherit;
+}
+
+.title {
+	padding-inline: 11px 58px;
+	font-weight: 700;
+	font-size: clamp(1.38rem, 0.84vw + 0.97rem, 1.75rem);
+	font-family: var(--additional-font), serif;
+}
+
+.accent {
+	color: var(--accent-color);
+}

@@ -1,0 +1,16 @@
+.sortButton {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+	padding: 2px 11px 3px;
+	font-weight: 500;
+	font-size: 14px;
+	font-family: var(--additional-font);
+	letter-spacing: 0.28px;
+	background-color: #f1d1be;
+	border: none;
+	border-radius: 118px;
+	cursor: pointer;
+	appearance: none;
+	margin-block: 9px;
+}

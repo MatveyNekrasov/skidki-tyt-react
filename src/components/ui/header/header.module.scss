@@ -1,0 +1,28 @@
+.wrapper {
+	background-color: rgb(244 194 168 / 68%);
+}
+
+.layout {
+	display: grid;
+	grid-template-columns: repeat(3, max-content) 1fr;
+	max-inline-size: 1480px;
+	margin: 0 auto;
+	background-image: url('/src/images/svg/hearts_head.svg');
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: contain;
+	place-items: center;
+}
+
+.menuWrapper {
+	background-color: rgb(164 178 185 / 21%);
+}
+
+.menu {
+	display: flex;
+	justify-content: space-between;
+	max-inline-size: 1480px;
+	margin: 0 auto;
+	padding-inline: 100px 100px;
+	font-size: clamp(0.88rem, 0.28vw + 0.74rem, 1rem);
+}

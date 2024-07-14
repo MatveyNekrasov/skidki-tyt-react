@@ -1,0 +1,23 @@
+.searchForm {
+	padding-inline-start: 17px;
+	padding-block: 20px;
+}
+
+.searchField {
+	padding-inline: 117px 74px;
+	font-weight: 500;
+	font-size: clamp(0.88rem, 0.84vw + 0.47rem, 1.25rem);
+	font-family: var(--additional-font);
+	letter-spacing: 0.3px;
+	background-image: url("/src/images/svg/icon_magnifying_glass.svg");
+	background-repeat: no-repeat;
+	background-position: 40px center;
+	border: none;
+	border-radius: 118px;
+	appearance: none;
+	padding-block: 4px;
+}
+
+.searchField::placeholder {
+	color: rgb(0 0 0 / 48%);
+}

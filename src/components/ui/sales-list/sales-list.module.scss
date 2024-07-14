@@ -1,0 +1,11 @@
+.salesList {
+	display: flex;
+	flex-direction: column;
+	gap: 53px;
+	max-inline-size: 1352px;
+	margin: 0 auto;
+}
+
+.salesList:last-child {
+	padding-block-end: 330px;
+}

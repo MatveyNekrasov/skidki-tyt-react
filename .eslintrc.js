@@ -1,5 +1,8 @@
+const path = require('path');
+
 module.exports = {
 	parser: '@typescript-eslint/parser',
+	plugins: ['react', '@typescript-eslint', 'prettier'],
 	parserOptions: {
 		ecmaVersion: 2020,
 		sourceType: 'module',
@@ -8,6 +11,12 @@ module.exports = {
 	settings: {
 		react: {
 			version: 'detect',
+		},
+		'import/resolver': {
+			alias: {
+				map: [['@', path.resolve(__dirname, 'src')]],
+				extensions: ['.ts', '.js', '.tsx', '.jsx'],
+			},
 		},
 	},
 	extends: [
@@ -24,6 +33,13 @@ module.exports = {
 	],
 	rules: {
 		quotes: [2, 'single', { avoidEscape: true }],
+		'prettier/prettier': [
+			'warn',
+			{},
+			{
+				usePrettierrc: true,
+			},
+		],
 		'no-unused-vars': 'off',
 		'@typescript-eslint/no-unused-vars': ['error'],
 		'@typescript-eslint/no-var-requires': 'off',

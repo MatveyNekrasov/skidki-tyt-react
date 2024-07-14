@@ -1,0 +1,136 @@
+.sale {
+	display: grid;
+	grid-template:
+		'card-image card-title card-shop'
+		'card-image card-text card-shop'
+		'card-image card-prices card-product-btn';
+	grid-template-rows: repeat(3, auto);
+	grid-template-columns: 20% 60% auto;
+
+	/* place-items: center; */
+	justify-content: center;
+	max-inline-size: 1352px;
+	padding: 19px 32px 19px 28px;
+	column-gap: 35px;
+	background-color: rgb(164 178 185 / 21%);
+	border: 1px solid rgb(0 0 0 / 23%);
+	border-radius: 20px;
+	cursor: pointer;
+}
+
+.saleTitle {
+	grid-area: card-title;
+	justify-self: start;
+	padding-block-start: 6px;
+	font-weight: 700;
+	font-size: clamp(1rem, 0.56vw + 0.73rem, 1.25rem);
+	cursor: pointer;
+	transition: color 0.3s;
+}
+
+.sale:hover .saleTitle {
+	color: var(--blue-accent-color);
+}
+
+.saleImageWrapper {
+	position: relative;
+	display: flex;
+	grid-area: card-image;
+	align-items: center;
+	background-color: #ffffff;
+	border-radius: 23px;
+}
+
+.saleImage {
+	inline-size: 100%;
+	block-size: 200px;
+	border-radius: 23px;
+	object-fit: contain;
+}
+
+.saleText {
+	grid-area: card-text;
+	place-self: start start;
+	margin-block-start: 17px;
+	cursor: pointer;
+}
+
+.minimize {
+	display: -webkit-box;
+	overflow: hidden;
+	-webkit-line-clamp: 3;
+	line-clamp: 3;
+	-webkit-box-orient: vertical;
+}
+
+.salePrices {
+	display: flex;
+	grid-area: card-prices;
+	justify-self: start;
+	align-items: center;
+	gap: 24px;
+	padding-block-start: 9px;
+}
+
+.salePrice {
+	color: var(--blue-accent-color);
+	font-weight: 700;
+	font-size: clamp(1.81rem, 0.98vw + 1.34rem, 2.25rem);
+}
+
+.saleFullPrice {
+	color: #272726;
+	font-weight: 700;
+	text-decoration-line: line-through;
+}
+
+.salePercentOff {
+	min-inline-size: 63px;
+	color: #ffffff;
+	font-weight: 700;
+	text-align: center;
+	background: var(--blue-accent-color);
+	border-radius: 8px;
+	padding-block: 7px;
+}
+
+.shopInfo {
+	grid-area: card-shop;
+	place-self: start center;
+	text-align: center;
+	border-radius: 50%;
+}
+
+.shopImage {
+	inline-size: 95px;
+	border-radius: 50%;
+	aspect-ratio: 1 / 1;
+}
+
+.shopName {
+	max-inline-size: 140px;
+	margin-block-start: 18px;
+	font-weight: 700;
+	font-size: clamp(1rem, 0.56vw + 0.73rem, 1.25rem);
+	word-wrap: break-word;
+}
+
+.productButton {
+	grid-area: card-product-btn;
+	place-self: end center;
+	padding: 10px 7px;
+	color: #ffffff;
+	font-weight: 700;
+	font-size: clamp(0.94rem, 0.14vw + 0.87rem, 1rem);
+	font-family: var(--main-font);
+	text-align: center;
+	text-decoration: none;
+	background: #ffa06e;
+	border-radius: 10px;
+	box-shadow: 1px 1px 4px 1px rgb(0 0 0 / 25%);
+	transition: background 0.3s;
+}
+
+.productButton:hover {
+	background: var(--accent-color);
+}

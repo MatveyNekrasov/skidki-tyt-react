@@ -3,6 +3,7 @@ const { Extension } = require('typescript');
 const HTMLWebpackPlugins = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 const webpack = require('webpack');
 
 const production = process.env.NODE_ENV === 'production';
@@ -70,13 +71,18 @@ module.exports = {
 					filename: 'static/fonts/[hash][ext][query]',
 				},
 			},
+			{
+				test: /\.json$/,
+				type: 'json',
+			},
 		],
 	},
 	resolve: {
 		extensions: ['.js', '.jsx', '.tsx', '.ts', '.json'],
+		plugins: [new TsconfigPathsPlugin()],
 	},
 	devServer: {
-		static: path.resolve(__dirname, './dist'),
+		static: path.resolve(__dirname, '..', './src'),
 		compress: true,
 		port: 8080,
 		open: true,
