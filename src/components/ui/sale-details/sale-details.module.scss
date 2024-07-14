@@ -1,0 +1,210 @@
+.main {
+	display: grid;
+	grid-template-columns: auto 1fr;
+	grid-template-areas: 'card card-aside' 'similar similar';
+	max-inline-size: 1480px;
+	margin: 0 auto;
+	padding-block-start: 26px;
+	column-gap: 18px;
+	background-color: #ffffff;
+	background-image: url('/src/images/svg/hearts_footer.svg');
+	background-repeat: no-repeat;
+	background-position: center bottom -115px;
+	padding-inline: clamp(1.25rem, 6.18vw - 1.72rem, 4rem);
+}
+
+.layout {
+	grid-area: card;
+}
+
+.saleCard {
+	position: relative;
+	display: grid;
+	grid-template-columns: 55% 1fr;
+	grid-template-areas:
+		'card-image card-info'
+		'card-features-title card-features-title'
+		'card-features-text card-features-text';
+	justify-content: center;
+	align-items: start;
+	max-inline-size: 1047px;
+	padding: clamp(0.88rem, 3.65vw - 0.88rem, 2.5rem)
+		clamp(1.25rem, 2.11vw + 0.24rem, 2.19rem);
+	column-gap: 28px;
+	background: linear-gradient(
+		180deg,
+		rgb(164 178 185 / 21%) 0%,
+		rgb(249 184 150 / 7%) 100%
+	);
+	border: 1px solid rgb(0 0 0 / 23%);
+	border-radius: 20px;
+}
+
+.imageWrapper {
+	position: relative;
+	grid-area: card-image;
+	inline-size: 100%;
+}
+
+.productImage {
+	inline-size: 100%;
+	border: 1px solid rgb(0 0 0 / 23%);
+	border-radius: 20px;
+	object-fit: contain;
+	object-position: center;
+}
+
+/* .product-card__image-slider-wrapper {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  inset-block-end: 11px;
+  inset-inline-start: 0;
+  inset-inline-end: 0;
+}
+
+.product-card__image-slider {
+  border-radius: 50%;
+  background-color: #000;
+  inline-size: 10px;
+  aspect-ratio: 1 / 1;
+}
+
+.product-card__image-slider.is-active {
+  background-color: var(--accent-color);
+} */
+
+.productInfo {
+	grid-area: card-info;
+}
+
+.productTitle {
+	padding-block-end: 20px;
+	font-weight: 700;
+	font-size: clamp(1.19rem, 0.56vw + 0.92rem, 1.44rem);
+}
+
+.productDescription {
+	font-size: clamp(1rem, 0.56vw + 0.73rem, 1.25rem);
+}
+
+.featuresTitle {
+	grid-area: card-features-title;
+	padding-block: 50px 25px;
+	font-weight: 700;
+	font-size: clamp(1.44rem, 0.28vw + 1.3rem, 1.56rem);
+}
+
+.featuresText {
+	grid-area: card-features-text;
+	padding-block-end: 90px;
+	padding-inline-end: clamp(0rem, 24.72vw - 11.87rem, 11rem);
+	font-size: clamp(1rem, 0.56vw + 0.73rem, 1.25rem);
+}
+
+.favoriteButton {
+	position: absolute;
+	inset-block-end: 40px;
+	inset-inline-end: 60px;
+	padding: 0;
+	background-color: transparent;
+	border: none;
+	appearance: none;
+}
+
+.favoriteImage {
+	inline-size: 60px;
+	cursor: pointer;
+}
+
+.asideInfo {
+	grid-area: card-aside;
+}
+
+.priceInfo {
+	padding-block-end: 10px;
+	background: linear-gradient(
+		130deg,
+		#f1d1be -0.34%,
+		rgb(255 255 255 / 0%) 78.02%
+	);
+	border-radius: 20px;
+	box-shadow: 0 4px 4px 0 rgb(0 0 0 / 25%);
+}
+
+.prices {
+	display: grid;
+	grid-template-columns: max-content auto;
+	gap: 14px 19px;
+	padding-block-start: 31px;
+	place-items: center;
+	padding-inline: 19px;
+}
+
+.salePrice {
+	color: #009ea8;
+	font-weight: 700;
+	font-size: clamp(2rem, 1.12vw + 1.46rem, 2.5rem);
+}
+
+.fullPrice {
+	padding-block-end: 36px;
+	color: #272726;
+	font-weight: 700;
+	text-decoration-line: line-through;
+}
+
+.priceOffPercent {
+	padding: 7px 13px;
+	color: #ffffff;
+	font-weight: 700;
+	font-size: clamp(1.25rem, -0.56vw + 1.52rem, 1rem);
+	background: #009ea8;
+	border-radius: 8px;
+}
+
+.productButton {
+	display: block;
+	max-inline-size: 154px;
+	margin: 0 auto;
+	padding: 10px 8px;
+	color: #ffffff;
+	font-weight: 700;
+	font-size: 16px;
+	text-decoration: none;
+	background: #ffa06e;
+	border-radius: 10px;
+	box-shadow: 1px 1px 4px 1px rgb(0 0 0 / 25%);
+}
+
+.shopInfo {
+	padding-block-start: 58px;
+}
+
+.shopImage {
+	display: block;
+	inline-size: 160px;
+	margin: 0 auto;
+	margin-block-end: 52px;
+	border-radius: 50%;
+	object-fit: contain;
+	object-position: center;
+	aspect-ratio: 1 / 1;
+}
+
+.shopButton {
+	display: flex;
+	margin: 0 auto;
+	padding: 20px 16px;
+	color: #1e1e1e;
+	font-weight: 600;
+	font-size: clamp(0.94rem, 0.7vw + 0.6rem, 1.25rem);
+	font-family: var(--main-font);
+	letter-spacing: 0.4px;
+	background: rgb(241 209 190 / 82%);
+	border: none;
+	border-radius: 23px;
+	box-shadow: 0 4px 4px 0 rgb(0 0 0 / 25%);
+	cursor: pointer;
+}

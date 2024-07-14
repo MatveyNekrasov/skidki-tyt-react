@@ -1,7 +1,9 @@
+import clsx from 'clsx';
+import { Link } from 'react-router-dom';
+
 import { TSaleUIProps } from './type';
 
 import * as styles from './sale.module.scss';
-import clsx from 'clsx';
 
 export const SaleUI = ({ sale }: TSaleUIProps) => {
 	return (
@@ -14,14 +16,16 @@ export const SaleUI = ({ sale }: TSaleUIProps) => {
 						className={styles.saleImage}
 					/>
 				</div>
-				<h2 className={styles.saleTitle}>{sale.shortName}</h2>
+				<Link to={`/sale/${sale.id}`}>
+					<h2 className={styles.saleTitle}>{sale.shortName}</h2>
+				</Link>
 				<div className={clsx(styles.saleText, styles.minimize)}>
 					{sale.description}
 				</div>
 				<div className={styles.salePrices}>
 					<p className={styles.salePrice}>{`${sale.price} ₽`}</p>
 					<p className={styles.saleFullPrice}>{`${sale.salePrice} ₽`}</p>
-					<p className={styles.salePercentOff}>{`${sale.priceOffPercent} %`}</p>
+					<p className={styles.salePercentOff}>{`${sale.priceOffPercent}%`}</p>
 				</div>
 				<div className={styles.shopInfo}>
 					<img

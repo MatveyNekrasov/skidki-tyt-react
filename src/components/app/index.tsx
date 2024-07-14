@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
 import { Header } from '@/components/header';
+import { SaleDetails } from '@/components/sale-details';
 import { SalesPage } from '@/pages/sales-page';
 
 import { useDispatch } from '@/services/store';
@@ -21,6 +22,7 @@ export const App = () => {
 			<Header />
 			<Routes>
 				<Route path='/' element={<SalesPage />} />
+				<Route path='/sale/:id' element={<SaleDetails />} />
 			</Routes>
 		</div>
 	);
