@@ -17,8 +17,6 @@ export const SaleDetailsUI = ({ saleData }: TSaleDetailsUIProps) => {
 		feature,
 	} = saleData;
 
-	console.log(feature);
-
 	return (
 		<main className={styles.main}>
 			<div className={styles.layout}>

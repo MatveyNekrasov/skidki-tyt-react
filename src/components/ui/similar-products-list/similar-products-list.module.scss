@@ -1,0 +1,22 @@
+.similarProducts {
+	grid-area: similar;
+}
+
+.title {
+	padding-block-start: 100px;
+	font-family: var(--accent-font);
+	font-weight: 700;
+	font-size: 40px;
+	font-style: normal;
+	line-height: normal;
+	text-align: center;
+}
+
+.list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 47px;
+	padding-block-start: 31px;
+	padding-block-end: 273px;
+}
