@@ -1,3 +1,4 @@
+import similarImage from '@/images/similar.png';
 import * as styles from './similar-product.module.scss';
 
 export const SimilarProductUI = () => {
@@ -5,7 +6,7 @@ export const SimilarProductUI = () => {
 		<li>
 			<article className={styles.card}>
 				<img
-					src='./images/similar.png'
+					src={similarImage}
 					alt='Изображение похожего товара'
 					className={styles.image}
 				/>

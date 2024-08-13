@@ -4,9 +4,9 @@
 
 .title {
 	padding-block-start: 100px;
-	font-family: var(--accent-font);
 	font-weight: 700;
 	font-size: 40px;
+	font-family: var(--accent-font);
 	font-style: normal;
 	line-height: normal;
 	text-align: center;
@@ -17,6 +17,5 @@
 	flex-wrap: wrap;
 	justify-content: center;
 	gap: 47px;
-	padding-block-start: 31px;
-	padding-block-end: 273px;
+	padding-block: 31px 273px;
 }

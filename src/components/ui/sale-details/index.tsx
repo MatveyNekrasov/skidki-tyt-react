@@ -3,6 +3,7 @@ import { TSaleDetailsUIProps } from './type';
 import * as styles from './sale-details.module.scss';
 
 import bookmarkImage from '@/images/svg/bookmark.svg';
+import { SimilarProductsListUI } from '../similar-products-list';
 
 export const SaleDetailsUI = ({ saleData }: TSaleDetailsUIProps) => {
 	const {
@@ -48,6 +49,7 @@ export const SaleDetailsUI = ({ saleData }: TSaleDetailsUIProps) => {
 					</button>
 				</article>
 			</div>
+			<SimilarProductsListUI />
 			<aside className={styles.asideInfo}>
 				<div className={styles.priceInfo}>
 					<div className={styles.prices}>
