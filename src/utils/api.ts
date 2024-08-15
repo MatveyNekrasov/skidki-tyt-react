@@ -35,3 +35,13 @@ export const getSalesApi = async (): Promise<TSale[]> => {
 		return await fetchData<TSale[]>(mockSalesListUrl);
 	}
 };
+
+export const searchSalesApi = async (query: string): Promise<TSale[]> => {
+	try {
+		const url = `${BASE_URL}/api/search?s=${query}`;
+		return await fetchData<TSale[]>(url);
+	} catch (error) {
+		handleFetchError(error);
+		return await fetchData<TSale[]>(mockSalesListUrl);
+	}
+};
