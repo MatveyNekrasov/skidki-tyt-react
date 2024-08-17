@@ -20,9 +20,14 @@ const initialState: TSalesState = {
 export const salesSlice = createSlice({
 	name: 'sales',
 	initialState,
-	reducers: {},
+	reducers: {
+		clearSearchedSales: (state) => {
+			state.searchSales = [];
+		},
+	},
 	selectors: {
 		getSalesList: (state) => state.sales,
+		getSearchedSales: (state) => state.searchSales,
 		getLoading: (state) => state.isLoading,
 	},
 	extraReducers: (builder) => {
@@ -54,4 +59,6 @@ export const salesSlice = createSlice({
 	},
 });
 
-export const { getLoading, getSalesList } = salesSlice.selectors;
+export const { getLoading, getSalesList, getSearchedSales } =
+	salesSlice.selectors;
+export const { clearSearchedSales } = salesSlice.actions;

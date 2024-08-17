@@ -2,7 +2,7 @@ import * as styles from './header.module.scss';
 
 import { Logo } from '@/components/ui/logo';
 import { ShopList } from '@/components/shop-list';
-import { SearchForm } from '@/components/search-from';
+import { SearchForm } from '@/components/search-form';
 import { MenuList } from '@/components/menu-list';
 import { SortButton } from '@/components/sort-button';
 
