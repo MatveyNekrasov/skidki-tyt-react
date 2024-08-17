@@ -1,5 +1,5 @@
 import { TSale } from '@/utils/types';
-import { BASE_URL, mockSalesListUrl } from './constants';
+import { BASE_URL, mockSalesListUrl, mockSearchSalesUrl } from './constants';
 
 const fetchData = async <T>(url: string): Promise<T> => {
 	const res = await fetch(url);
@@ -42,6 +42,6 @@ export const searchSalesApi = async (query: string): Promise<TSale[]> => {
 		return await fetchData<TSale[]>(url);
 	} catch (error) {
 		handleFetchError(error);
-		return await fetchData<TSale[]>(mockSalesListUrl);
+		return await fetchData<TSale[]>(mockSearchSalesUrl);
 	}
 };
