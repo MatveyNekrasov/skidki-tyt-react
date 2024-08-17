@@ -38,7 +38,7 @@ export const getSalesApi = async (): Promise<TSale[]> => {
 
 export const searchSalesApi = async (query: string): Promise<TSale[]> => {
 	try {
-		const url = `${BASE_URL}/api/search?s=${query}`;
+		const url = `${BASE_URL}/search?s=${query}`;
 		return await fetchData<TSale[]>(url);
 	} catch (error) {
 		handleFetchError(error);
