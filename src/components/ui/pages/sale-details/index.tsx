@@ -1,6 +1,6 @@
 import { TSaleDetailsUIProps } from './type';
 
-import { SimilarProductsListUI } from '@/components/ui/similar-products-list';
+import { SimilarProductsList } from '@/components/similar-products-list';
 
 import * as styles from './sale-details.module.scss';
 import bookmarkImage from '@/images/svg/bookmark.svg';
@@ -49,7 +49,7 @@ export const SaleDetailsUI = ({ saleData }: TSaleDetailsUIProps) => {
 					</button>
 				</article>
 			</div>
-			<SimilarProductsListUI />
+			<SimilarProductsList />
 			<aside className={styles.asideInfo}>
 				<div className={styles.priceInfo}>
 					<div className={styles.prices}>
