@@ -4,7 +4,7 @@ import { getSalesList } from '@/services/sales/slice';
 import { useSelector } from '@/services/store';
 
 import { Preloader } from '@/components/ui/preloader';
-import { SaleDetailsUI } from '../ui/sale-details';
+import { SaleDetailsUI } from '@/components/ui/pages/sale-details';
 
 export const SaleDetails = () => {
 	const { id } = useParams();

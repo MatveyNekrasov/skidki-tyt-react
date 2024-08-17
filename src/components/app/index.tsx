@@ -3,7 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
-import { SaleDetails } from '@/components/sale-details';
+import { SaleDetails } from '@/pages/sale-details';
 import { SalesPage } from '@/pages/sales-page';
 
 import { useDispatch } from '@/services/store';
