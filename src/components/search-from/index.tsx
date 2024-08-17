@@ -1,4 +1,4 @@
-import { ChangeEvent, useState } from 'react';
+import { ChangeEvent, useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 
 import { useDebounce } from '@/utils/hooks/use-debounced-state';
@@ -10,6 +10,13 @@ export const SearchForm = () => {
 	const [searchTerm, setSearchTerm] = useState('');
 	const [searchParams, setSearchParams] = useSearchParams();
 
+	useEffect(() => {
+		const search = searchParams.get('search');
+		if (search) {
+			setSearchTerm(search);
+		}
+	}, [searchParams]);
+
 	const fetchSearchResult = (query: string) =>
 		searchSalesApi(query).then((res) => res);
 
@@ -19,7 +26,13 @@ export const SearchForm = () => {
 		const newSearchTerm = event.target.value;
 		setSearchTerm(newSearchTerm);
 		debouncedQuery(newSearchTerm);
-		setSearchParams({ query: newSearchTerm });
+		setSearchParams({ search: newSearchTerm });
 	};
-	return <SearchFormUI />;
+
+	return (
+		<SearchFormUI
+			searchTerm={searchParams.get('search') || searchTerm}
+			handleInputChange={handleInputChange}
+		/>
+	);
 };
