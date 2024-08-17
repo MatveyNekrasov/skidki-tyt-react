@@ -38,10 +38,18 @@ export const getSalesApi = async (): Promise<TSale[]> => {
 
 export const searchSalesApi = async (query: string): Promise<TSale[]> => {
 	try {
-		const url = `${BASE_URL}/search?s=${query}`;
-		return await fetchData<TSale[]>(url);
+		return await fetchData<TSale[]>(`${BASE_URL}/search?s=${query}`);
 	} catch (error) {
 		handleFetchError(error);
 		return await fetchData<TSale[]>(mockSearchSalesUrl);
+	}
+};
+
+export const getSimilarProducts = async (): Promise<TSale[]> => {
+	try {
+		return await fetchData<TSale[]>(`${BASE_URL}/alike`);
+	} catch (error) {
+		handleFetchError(error);
+		return await fetchData<TSale[]>(mockSalesListUrl);
 	}
 };
