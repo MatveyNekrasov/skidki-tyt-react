@@ -1,0 +1,89 @@
+.notFoundWrapper {
+	position: relative;
+	height: 100vh;
+}
+
+.notFoundWrapper .notfound {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 100%;
+	max-width: 460px;
+	line-height: 1.4;
+	text-align: center;
+	transform: translate(-50%, -50%);
+}
+
+.notfound .notfound404 {
+	position: relative;
+	width: 180px;
+	height: 180px;
+	margin: 0 auto 50px;
+}
+
+.notfound .notfound404 > div:first-child {
+	position: absolute;
+	inset: 0;
+	background: hsl(21deg 78% 81% / 68%);
+	border: 5px dashed #000000;
+	border-radius: 5px;
+	transform: rotate(45deg);
+}
+
+.notfound .notfound404 > div:first-child::before {
+	position: absolute;
+	inset: -5px;
+	border-radius: 5px;
+	box-shadow: 0 0 0 5px rgb(0 0 0 / 10%) inset;
+	content: '';
+}
+
+.notfound .notfound404 h1 {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	height: 40px;
+	margin: 0;
+	color: #000000;
+	font-weight: 700;
+	font-size: 90px;
+	font-family: var(--main-font), sans-serif;
+	line-height: 1.2 /* 40px */;
+	text-align: center;
+	transform: translate(-50%, -50%);
+}
+
+.notfound h2 {
+	font-weight: 700;
+	font-size: 33px;
+	font-family: var(--main-font), sans-serif;
+	letter-spacing: 7px;
+	text-transform: uppercase;
+}
+
+.notfound p {
+	padding-block-end: 20px;
+	color: #000000;
+	font-weight: 400;
+	font-size: 16px;
+	font-family: var(--main-font), sans-serif;
+}
+
+.notfound a {
+	display: inline-block;
+	padding: 10px 25px;
+	color: #ffffff;
+	font-weight: 700;
+	font-size: 14px;
+	font-family: var(--main-font), sans-serif;
+	text-transform: uppercase;
+	text-decoration: none;
+	background-color: #8f8f8f;
+	border: none;
+	border-radius: 40px;
+	transition: 0.2s all;
+}
+
+.notfound a:hover {
+	background-color: #2c2c2c;
+}
