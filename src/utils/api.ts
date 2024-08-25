@@ -1,5 +1,11 @@
-import { TSale } from '@/utils/types';
-import { BASE_URL, mockSalesListUrl, mockSearchSalesUrl } from './constants';
+import { TSale, TShop, TSuggestion } from '@/utils/types';
+import {
+	BASE_URL,
+	mockSalesListUrl,
+	mockSearchSalesUrl,
+	mockShopsListUrl,
+	mockSuggestionsUrl,
+} from './constants';
 
 const fetchData = async <T>(url: string): Promise<T> => {
 	const res = await fetch(url);
@@ -51,5 +57,23 @@ export const getSimilarProducts = async (): Promise<TSale[]> => {
 	} catch (error) {
 		handleFetchError(error);
 		return await fetchData<TSale[]>(mockSalesListUrl);
+	}
+};
+
+export const getShopsListApi = async (): Promise<TShop[]> => {
+	try {
+		return await fetchData<TShop[]>(`${BASE_URL}/shop`);
+	} catch (error) {
+		handleFetchError(error);
+		return await fetchData<TShop[]>(mockShopsListUrl);
+	}
+};
+
+export const getSuggestionsApi = async (): Promise<TSuggestion[]> => {
+	try {
+		return await fetchData<TSuggestion[]>(`${BASE_URL}/suggestions`);
+	} catch (error) {
+		handleFetchError(error);
+		return await fetchData<TSuggestion[]>(mockSuggestionsUrl);
 	}
 };

@@ -1,0 +1,16 @@
+[
+	{
+		"id": 4,
+		"name": "Летуаль",
+		"url": "https://www.letu.ru/",
+		"image": "https://www.letu.ru/common/img/logo/letu-logo.svg",
+		"description": "Летуаль"
+	},
+	{
+		"id": 5,
+		"name": "wildberries",
+		"url": "https://www.wildberries.ru/",
+		"image": "https://static-basket-01.wbbasket.ru/vol0/i/v3/header/wb-logo_distinction_2024.png",
+		"description": "wildberries"
+	}
+]

@@ -6,9 +6,11 @@ import {
 } from 'react-redux';
 
 import { salesSlice } from '@/services/sales/slice';
+import { shopsSlice } from './shops/slice';
 
 export const rootReducer = combineReducers({
 	[salesSlice.reducerPath]: salesSlice.reducer,
+	[shopsSlice.reducerPath]: shopsSlice.reducer,
 });
 
 const store = configureStore({

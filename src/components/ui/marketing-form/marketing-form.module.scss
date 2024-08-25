@@ -1,0 +1,108 @@
+.main {
+	flex: 1;
+}
+
+.formHeading {
+	padding: 25px 0;
+	text-align: center;
+}
+
+.form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.suggestionsContainer {
+	min-width: 600px;
+	max-height: 200px; /* Максимальная высота контейнера */
+	margin-top: 20px; /* Отступ сверху */
+	padding: 10px; /* Внутренний отступ */
+	overflow-y: auto; /* Вертикальная полоса прокрутки */
+	background-color: #f9f9f9; /* Фон контейнера */
+	border: 1px solid #cccccc; /* Граница для визуального разделения */
+}
+
+.suggestionsContainer h3 {
+	text-align: center;
+}
+
+.suggestionsContainer ul {
+	margin: 0; /* Убираем внешний отступ */
+	padding: 0; /* Убираем внутренний отступ */
+	list-style-type: none; /* Убираем маркеры списка  */
+}
+
+.suggestionItem {
+	display: flex; /* Используем flexbox для выравнивания элементов */
+	align-items: center; /* Выравнивание по вертикали */
+	height: 80px; /* Фиксированная высота для элементов списка */
+	padding: 10px 0; /* Внутренний отступ для элементов списка */
+	border-bottom: 1px solid #eeeeee; /* Разделитель между элементами списка */
+}
+
+.suggestionItem input[type='radio'] {
+	margin-right: 10px; /*  Отступ справа от радиокнопки */
+}
+
+.suggestionImage {
+	width: 60px; /* Ширина изображения */
+	height: 60px; /* Высота изображения */
+	margin-right: 10px; /* Отступ справа от изображения */
+	object-fit: cover; /* Масштабирование изображения */
+}
+
+.suggestionInfo {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.suggestionName {
+	margin-bottom: 5px; /* Отступ снизу от имени */
+	font-weight: bold; /* Жирный шрифт для имени */
+}
+
+.suggestionLink {
+	color: var(--accent-color); /* Цвет ссылки */
+	text-decoration: none; /* Убираем подчеркивание ссылки */
+
+	&:hover {
+		text-decoration: underline; /* Подчеркивание при наведении */
+	}
+}
+
+.submitButton {
+	margin-top: 20px; /* Отступ сверху от кнопки */
+	padding: 10px 20px; /* Внутренний отступ кнопки */
+	color: #ffffff; /* Цвет текста кнопки */
+	background-color: #007bff; /* Цвет фона кнопки */
+	border: none; /* Убираем границу кнопки  */
+	cursor: pointer; /* Курсор при наведении */
+
+	&:hover {
+		background-color: #0056b3; /* Цвет фона кнопки при наведении */
+	}
+}
+
+.generatedUrlContainer {
+	max-width: 600px;
+	margin: 20px auto;
+	margin-top: 20px; /* Отступ сверху от контейнера  */
+	padding: 10px; /* Внутренний отступ */
+	background-color: #f9f9f9; /* Фон контейнера */
+	border: 1px solid #cccccc; /* Граница для визуального разделения */
+}
+
+.generatedUrlInput {
+	width: 100%; /* Ширина поля ввода */
+	padding: 10px; /* Внутренний отступ */
+	color: #333333; /* Цвет текста */
+	font-size: 16px; /* Размер шрифта */
+	background-color: #ffffff; /* Фон поля ввода */
+	border: 1px solid #cccccc; /* Граница поля ввода */
+
+	&:focus {
+		outline: none; /* Убираем контур при фокусе */
+	}
+}

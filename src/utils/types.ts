@@ -12,3 +12,13 @@ export type TSale = {
 	feature?: string;
 	category?: string;
 };
+
+export type TShop = {
+	id: number;
+	name: string;
+	url: string;
+	image: string;
+	description: string;
+};
+
+export type TSuggestion = Omit<TShop, 'description'>;
