@@ -1,4 +1,4 @@
-export const BASE_URL = 'https://dev.скидки-тут.рф/api';
+export const BASE_URL = 'https://скидки-тут.рф/api';
 export const mockSalesListUrl = '/mockSales.json';
 export const mockSearchSalesUrl = '/mockSearch.json';
 export const mockShopsListUrl = '/mockShops.json';
