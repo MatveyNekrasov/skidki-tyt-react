@@ -1,6 +1,8 @@
-import { TSale, TShop, TSuggestion } from '@/utils/types';
+import { TAnalyticItem, TSale, TShop, TSuggestion } from '@/utils/types';
 import {
+	BASE_ANALYTICS_URL,
 	BASE_URL,
+	mockAnalyticsUrl,
 	mockSalesListUrl,
 	mockSearchSalesUrl,
 	mockShopsListUrl,
@@ -75,5 +77,14 @@ export const getSuggestionsApi = async (): Promise<TSuggestion[]> => {
 	} catch (error) {
 		handleFetchError(error);
 		return await fetchData<TSuggestion[]>(mockSuggestionsUrl);
+	}
+};
+
+export const getAnalyticItemsApi = async (): Promise<TAnalyticItem[]> => {
+	try {
+		return await fetchData<TAnalyticItem[]>(`${BASE_ANALYTICS_URL}`);
+	} catch (error) {
+		handleFetchError(error);
+		return await fetchData<TAnalyticItem[]>(mockAnalyticsUrl);
 	}
 };

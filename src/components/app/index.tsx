@@ -12,6 +12,7 @@ import { useDispatch } from '@/services/store';
 import { getSales } from '@/services/sales/actions';
 
 import * as styles from './app.module.scss';
+import { AnalyticsChart } from '../analytics-chart';
 
 export const App = () => {
 	const dispatch = useDispatch();
@@ -27,6 +28,7 @@ export const App = () => {
 				<Route path='/' element={<SearchHandler />} />
 				<Route path='/sale/:id' element={<SaleDetails />} />
 				<Route path='/marketing' element={<MarketingForm />} />
+				<Route path='/analytics' element={<AnalyticsChart />} />
 				<Route path='*' element={<NotFoundPageUI />} />
 			</Routes>
 			<Footer />

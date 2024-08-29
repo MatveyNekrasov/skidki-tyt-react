@@ -22,3 +22,17 @@ export type TShop = {
 };
 
 export type TSuggestion = Omit<TShop, 'description'>;
+
+export type TAnalyticItem = {
+	user_id: number;
+	session_id: string;
+	source_url: string;
+	url: string;
+	referer: string;
+	user_agent: string;
+	ip: string;
+	method: string;
+	status_code: number;
+	response_time: number;
+	created_at: string;
+};
