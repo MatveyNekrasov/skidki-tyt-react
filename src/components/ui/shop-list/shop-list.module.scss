@@ -33,7 +33,7 @@
 	display: flex;
 	flex-direction: column;
 	gap: 23px;
-	min-inline-size: 400px;
+	min-inline-size: 300px;
 	padding: 21px 22px;
 	background: linear-gradient(163deg, #fbe8dd 10.43%, #ffffff 111.76%);
 	border: 1px solid rgb(0 0 0 / 23%);
@@ -45,7 +45,7 @@
 	align-items: center;
 	background: linear-gradient(90deg, #ffffff -46.27%, #f8d6c4 99.79%);
 	border-radius: 20px;
-	cursor: pointer;
+	transition: background 0.3s;
 }
 
 .shopItem::before {
@@ -59,7 +59,23 @@
 
 .shopItem:hover {
 	background: #ffffff;
-	transition: background 0.3s linear;
+	transition: background 0.3s;
+}
+
+.shopButton {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	text-align: left;
+	background: none;
+	border: none;
+	cursor: pointer;
+}
+
+.shopButton:focus {
+	outline: none;
 }
 
 .shopText {
@@ -75,5 +91,7 @@
 	inline-size: 30px;
 	margin-inline-end: 8px;
 	border-radius: 50%;
-	aspect-ratio: 1 / 1;
+
+	/* aspect-ratio: 1 / 1; */
+	object-fit: contain;
 }

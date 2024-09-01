@@ -3,5 +3,6 @@ export const BASE_ANALYTICS_URL = 'https://скидки-тут.рф/visit/analyt
 export const mockSalesListUrl = '/mockSales.json';
 export const mockSearchSalesUrl = '/mockSearch.json';
 export const mockShopsListUrl = '/mockShops.json';
+export const mockFilterSalesUrl = '/mockFilter.json';
 export const mockSuggestionsUrl = '/mockSuggestions.json';
 export const mockAnalyticsUrl = '/mockAnalytics.json';

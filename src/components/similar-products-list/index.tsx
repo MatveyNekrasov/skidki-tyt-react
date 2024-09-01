@@ -3,13 +3,13 @@ import { useEffect, useState } from 'react';
 import { SimilarProductsListUI } from '@/components/ui/similar-products-list';
 
 import { TSale } from '@/utils/types';
-import { getSimilarProducts } from '@/utils/api';
+import { getSimilarProductsApi } from '@/utils/api';
 
 export const SimilarProductsList = () => {
 	const [similarProducts, setSimilarProducts] = useState<TSale[]>([]);
 
 	useEffect(() => {
-		getSimilarProducts()
+		getSimilarProductsApi()
 			.then((products) => {
 				setSimilarProducts(products);
 			})

@@ -3,6 +3,7 @@ import {
 	BASE_ANALYTICS_URL,
 	BASE_URL,
 	mockAnalyticsUrl,
+	mockFilterSalesUrl,
 	mockSalesListUrl,
 	mockSearchSalesUrl,
 	mockShopsListUrl,
@@ -53,7 +54,7 @@ export const searchSalesApi = async (query: string): Promise<TSale[]> => {
 	}
 };
 
-export const getSimilarProducts = async (): Promise<TSale[]> => {
+export const getSimilarProductsApi = async (): Promise<TSale[]> => {
 	try {
 		return await fetchData<TSale[]>(`${BASE_URL}/alike`);
 	} catch (error) {
@@ -68,6 +69,17 @@ export const getShopsListApi = async (): Promise<TShop[]> => {
 	} catch (error) {
 		handleFetchError(error);
 		return await fetchData<TShop[]>(mockShopsListUrl);
+	}
+};
+
+export const filterSalesByShopApi = async (
+	shopId: number
+): Promise<TSale[]> => {
+	try {
+		return await fetchData<TSale[]>(`${BASE_URL}/items?shop=${shopId}`);
+	} catch (error) {
+		handleFetchError(error);
+		return await fetchData<TSale[]>(mockFilterSalesUrl);
 	}
 };
 

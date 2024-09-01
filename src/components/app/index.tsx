@@ -7,18 +7,20 @@ import { SearchHandler } from '@/components/search-handler';
 import { MarketingForm } from '@/components/marketing-form';
 import { SaleDetails } from '@/pages/sale-details';
 import { NotFoundPageUI } from '@/components/ui/pages/not-found-page';
+import { AnalyticsChart } from '@/components/analytics-chart';
 
 import { useDispatch } from '@/services/store';
 import { getSales } from '@/services/sales/actions';
+import { getShops } from '@/services/shops/actions';
 
 import * as styles from './app.module.scss';
-import { AnalyticsChart } from '../analytics-chart';
 
 export const App = () => {
 	const dispatch = useDispatch();
 
 	useEffect(() => {
 		dispatch(getSales());
+		dispatch(getShops());
 	}, [dispatch]);
 
 	return (
