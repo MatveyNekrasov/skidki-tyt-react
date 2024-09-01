@@ -1,35 +1,57 @@
-import { ChangeEvent, useEffect, useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import {
+	ChangeEvent,
+	FormEvent,
+	useCallback,
+	useEffect,
+	useState,
+} from 'react';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 
 import { SearchFormUI } from '@/components/ui/search-form';
+import { useDebounce } from '@/utils/hooks/use-debounced-state';
 
 export const SearchForm = () => {
 	const [searchTerm, setSearchTerm] = useState('');
 	const [searchParams, setSearchParams] = useSearchParams();
-
-	const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
-		const newSearchTerm = event.target.value;
-		setSearchTerm(newSearchTerm);
-
-		if (newSearchTerm) {
-			setSearchParams({ search: newSearchTerm });
-		} else {
-			setSearchParams({});
-		}
-	};
+	const navigate = useNavigate();
 
 	useEffect(() => {
-		const searchParam = searchParams.get('search');
+		const initialSearchTerm = searchParams.get('search') || '';
+		setSearchTerm(initialSearchTerm);
+	}, [searchParams]);
 
-		if (searchParam !== searchTerm) {
-			setSearchTerm(searchParam || '');
-		}
-	}, [searchParams, searchTerm]);
+	const updateSearchParams = useCallback(
+		(term: string) => {
+			if (term) {
+				setSearchParams({ search: term });
+				navigate(`/?search=${term}`);
+			} else {
+				setSearchParams({});
+			}
+		},
+		[navigate, setSearchParams]
+	);
+
+	const debouncedUpdateSearchParams = useDebounce(updateSearchParams, 500);
+
+	const handleInputChange = useCallback(
+		(event: ChangeEvent<HTMLInputElement>) => {
+			const newSearchTerm = event.target.value;
+			setSearchTerm(newSearchTerm);
+			debouncedUpdateSearchParams(newSearchTerm);
+		},
+		[debouncedUpdateSearchParams]
+	);
+
+	const handleSubmit = useCallback((event: FormEvent) => {
+		event.preventDefault();
+	}, []);
 
 	return (
 		<SearchFormUI
-			searchTerm={searchParams.get('search') || searchTerm}
+			searchTerm={searchTerm}
 			handleInputChange={handleInputChange}
+			handleSubmit={handleSubmit}
 		/>
 	);
 };

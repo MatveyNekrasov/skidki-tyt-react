@@ -4,9 +4,10 @@ import { TSearchFormUIProps } from './type';
 export const SearchFormUI = ({
 	searchTerm,
 	handleInputChange,
+	handleSubmit,
 }: TSearchFormUIProps) => {
 	return (
-		<form action='' className={styles.searchForm}>
+		<form action='' className={styles.searchForm} onSubmit={handleSubmit}>
 			<input
 				type='search'
 				className={styles.searchField}
