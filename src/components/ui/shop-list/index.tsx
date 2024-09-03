@@ -41,7 +41,7 @@ export const ShopListUI = ({ shopsList, onShopClick }: TShopListUIProps) => {
 						<button
 							type='button'
 							onClick={() => {
-								onShopClick(shop.id, shop.name);
+								onShopClick(shop.name);
 								detailsRef.current!.removeAttribute('open');
 							}}
 							className={styles.shopButton}

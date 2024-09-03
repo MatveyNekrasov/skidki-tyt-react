@@ -1,17 +1,16 @@
 import { useCallback, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 
-import { useDispatch } from '@/services/store';
-import { useDebounce } from '@/utils/hooks/use-debounced-state';
-import { clearSearchedSales } from '@/services/sales/slice';
 import { getSearchSales } from '@/services/sales/actions';
+import { clearSearchedSales, getSearchedSales } from '@/services/sales/slice';
+import { useDispatch, useSelector } from '@/services/store';
+import { useDebounce } from '@/utils/hooks/use-debounced-state';
 
-import { SalesPage } from '@/pages/sales-page';
-
-export const SearchHandler = () => {
+const useSearch = () => {
 	const dispatch = useDispatch();
 	const [searchParams] = useSearchParams();
 	const searchTerm = searchParams.get('search');
+	const searchedSales = useSelector(getSearchedSales);
 
 	const fetchSearchResult = useCallback(
 		(query: string) => dispatch(getSearchSales(query)),
@@ -23,10 +22,12 @@ export const SearchHandler = () => {
 	useEffect(() => {
 		if (searchTerm) {
 			debouncedSearch(searchTerm);
-		} else {
+		} else if (searchedSales.length !== 0) {
 			dispatch(clearSearchedSales());
 		}
-	}, [searchTerm, dispatch, debouncedSearch]);
+	}, [searchTerm, dispatch, debouncedSearch, searchedSales.length]);
 
-	return <SalesPage />;
+	return searchTerm;
 };
+
+export default useSearch;

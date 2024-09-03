@@ -3,7 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
-import { SearchHandler } from '@/components/search-handler';
+import { UrlHandler } from '@/components/url-handler';
 import { MarketingForm } from '@/components/marketing-form';
 import { SaleDetails } from '@/pages/sale-details';
 import { NotFoundPageUI } from '@/components/ui/pages/not-found-page';
@@ -27,7 +27,7 @@ export const App = () => {
 		<div className={styles.page}>
 			<Header />
 			<Routes>
-				<Route path='/' element={<SearchHandler />} />
+				<Route path='/' element={<UrlHandler />} />
 				<Route path='/sale/:id' element={<SaleDetails />} />
 				<Route path='/marketing' element={<MarketingForm />} />
 				<Route path='/analytics' element={<AnalyticsChart />} />

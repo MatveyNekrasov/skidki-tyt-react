@@ -1,8 +1,9 @@
 .main {
-	padding-inline: clamp(1.25rem, 6.18vw - 1.72rem, 4rem);
+	min-height: 70vh;
 	padding-block-start: 26px;
 	background-color: #ffffff;
 	background-image: url('/images/svg/hearts_footer.svg');
 	background-repeat: no-repeat;
 	background-position: center bottom -115px;
+	padding-inline: clamp(1.25rem, 6.18vw - 1.72rem, 4rem);
 }

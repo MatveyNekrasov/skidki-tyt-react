@@ -1,20 +1,22 @@
 import { SalesListUI } from '@/components/ui/sales-list';
 
-import {
-	getFilteredSales,
-	getSalesList,
-	getSearchedSales,
-} from '@/services/sales/slice';
+import { useCurrentSales } from './hooks/useCurrentSales';
+import { useSearchAndShopParams } from './hooks/useSearchAndShopParams';
 import { useSelector } from '@/services/store';
+import { getLoading } from '@/services/sales/slice';
 
 export const SalesList = () => {
-	const sales = useSelector(getSalesList);
-	const searchSales = useSelector(getSearchedSales);
-	const filterSales = useSelector(getFilteredSales);
+	const { currentSales, currentFilter } = useCurrentSales();
+	const [searchTerm, shopName] = useSearchAndShopParams();
+	const isLoading = useSelector(getLoading);
 
-	if (searchSales.length > 0) return <SalesListUI sales={searchSales} />;
-
-	if (filterSales.length > 0) return <SalesListUI sales={filterSales} />;
-
-	return <SalesListUI sales={sales} />;
+	return (
+		<SalesListUI
+			sales={currentSales}
+			currentFilter={currentFilter}
+			searchTerm={searchTerm || ''}
+			shopName={shopName || ''}
+			isLoading={isLoading}
+		/>
+	);
 };

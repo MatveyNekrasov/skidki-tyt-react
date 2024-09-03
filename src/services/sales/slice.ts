@@ -30,6 +30,9 @@ export const salesSlice = createSlice({
 		clearSearchedSales: (state) => {
 			state.searchSales = [];
 		},
+		clearFilteredSales: (state) => {
+			state.filterSales = [];
+		},
 	},
 	selectors: {
 		getSalesList: (state) => state.sales,
@@ -79,4 +82,4 @@ export const salesSlice = createSlice({
 
 export const { getLoading, getSalesList, getSearchedSales, getFilteredSales } =
 	salesSlice.selectors;
-export const { clearSearchedSales } = salesSlice.actions;
+export const { clearSearchedSales, clearFilteredSales } = salesSlice.actions;
